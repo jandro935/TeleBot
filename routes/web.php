@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('telegram');
 });
+
+Route::get('/get-updates', [
+    'as' => 'get.index',
+    'uses' => 'TelegramController@getUpdates'
+]);
+
+Route::get('send',  'TelegramController@getSendMessage');
+Route::post('send', 'TelegramController@postSendMessage');
