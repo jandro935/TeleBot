@@ -30,9 +30,18 @@ class TelegramController extends Controller
         }
 
         Telegram::sendMessage([
-            'chat_id' => '-195185573',
+//            'chat_id' => '-195185573',
+            'chat_id' => '367182051', // YO
+//            'chat_id' => '783599', // PICHI
             'text' => $request->get('message')
         ]);
+
+        //https://telegram.me/jandro935_bot?start
+
+//        Telegram::sendPhoto([
+//            'chat_id' => '367182051',
+//            'photo' => 'http://mascotafiel.com/wp-content/uploads/2014/04/perros-graciosos.jpg'
+//        ]);
 
         return redirect()->back()
             ->with('status', 'success')
